@@ -9,18 +9,20 @@ public class App {
         int fizz = 3;
         int buzz = 5;
         for (int counter = 0; counter <= 100; counter++) {
-            if ((counter % fizz == 0) && (counter % buzz == 0)) {
+            if (isaDivider(fizz, counter) && isaDivider(buzz, counter)) {
                 System.out.println("FizzBuzz");
-            } else if ((counter % fizz == 0) && (counter % buzz != 0)) {
+            } else if (isaDivider(fizz, counter) && !isaDivider(buzz, counter)) {
                 System.out.println("Fizz");
-            } else if ((counter % fizz != 0) && (counter % buzz == 0)) {
+            } else if (!isaDivider(fizz, counter) && isaDivider(buzz, counter)) {
                 System.out.println("Buzz");
             } else {
                 System.out.println(counter);
             }
           }
     }
-
+    public static Boolean isaDivider(int divider, int numberToCheck){
+        return numberToCheck % divider == 0;
+    }
     public static void main(String[] args) {
         fizzbuzz();
     }
