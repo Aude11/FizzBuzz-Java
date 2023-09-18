@@ -9,9 +9,14 @@ public class App {
         int fizz = 3;
         int buzz = 5;
         int bang = 7;
+        int bong = 11;
         String wordToAdd;
         String bangWord = "Bang";
+
         for (int counter = 0; counter <= 1000; counter++) {
+            if (isaDivider(bong, counter)){
+                System.out.println("Bong");
+            } else{
             wordToAdd = addWord(bang, counter, bangWord);
             if (isaDivider(fizz, counter) && isaDivider(buzz, counter)) {
                 System.out.println("FizzBuzz"+ wordToAdd);
@@ -23,14 +28,16 @@ public class App {
                 System.out.println(counter);
             }
           }
+        }
     }
     public static Boolean isaDivider(int divider, int numberToCheck){
         return numberToCheck % divider == 0;
     }
+    
     public static String addWord(int divider, int numberToCheck, String wordToAdd){
-        if (isaDivider(divider, numberToCheck)){
+        if (isaDivider(divider, numberToCheck)) {
             return wordToAdd;
-        } else{
+        } else {
             return "";
         }
     }
