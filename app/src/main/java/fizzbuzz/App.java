@@ -5,7 +5,20 @@ package fizzbuzz;
 
 public class App {
     public static void fizzbuzz() {
-        // Your code goes here!
+        System.out.println("Welcome to Fezz Buzz!"); // Display the string.
+        int fizz = 3;
+        int buzz = 5;
+        for (int counter = 0; counter <= 100; counter++) {
+            if ((counter % fizz == 0) && (counter % buzz == 0)) {
+                System.out.println("FizzBuzz");
+            } else if ((counter % fizz == 0) && (counter % buzz != 0)) {
+                System.out.println("Fizz");
+            } else if ((counter % fizz != 0) && (counter % buzz == 0)) {
+                System.out.println("Buzz");
+            } else {
+                System.out.println(counter);
+            }
+          }
     }
 
     public static void main(String[] args) {
