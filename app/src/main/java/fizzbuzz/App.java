@@ -8,13 +8,17 @@ public class App {
         System.out.println("Welcome to Fezz Buzz!"); // Display the string.
         int fizz = 3;
         int buzz = 5;
-        for (int counter = 0; counter <= 100; counter++) {
+        int bang = 7;
+        String wordToAdd;
+        String bangWord = "Bang";
+        for (int counter = 0; counter <= 1000; counter++) {
+            wordToAdd = addWord(bang, counter, bangWord);
             if (isaDivider(fizz, counter) && isaDivider(buzz, counter)) {
-                System.out.println("FizzBuzz");
+                System.out.println("FizzBuzz"+ wordToAdd);
             } else if (isaDivider(fizz, counter) && !isaDivider(buzz, counter)) {
-                System.out.println("Fizz");
+                System.out.println("Fizz"+ wordToAdd);
             } else if (!isaDivider(fizz, counter) && isaDivider(buzz, counter)) {
-                System.out.println("Buzz");
+                System.out.println("Buzz"+ wordToAdd);
             } else {
                 System.out.println(counter);
             }
@@ -22,6 +26,13 @@ public class App {
     }
     public static Boolean isaDivider(int divider, int numberToCheck){
         return numberToCheck % divider == 0;
+    }
+    public static String addWord(int divider, int numberToCheck, String wordToAdd){
+        if (isaDivider(divider, numberToCheck)){
+            return wordToAdd;
+        } else{
+            return "";
+        }
     }
     public static void main(String[] args) {
         fizzbuzz();
