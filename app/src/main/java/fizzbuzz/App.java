@@ -35,7 +35,8 @@ public class App {
                 } else {
                         isReverse = isaDivider(reserve, counter);
                         if (isReverse) {
-                            System.out.println("reverse");
+                            String reversed = reverseSentence(sentence);
+                            System.out.println(reversed);
                         } else {
                             System.out.println(sentence);
                         }
@@ -44,15 +45,18 @@ public class App {
         }
     }
 
-    public static Boolean isaDivider(int divider, int numberToCheck){
+    public static Boolean isaDivider(int divider, int numberToCheck) {
         return numberToCheck % divider == 0;
     }
-    public static String addWord(int divider, int numberToCheck, String wordToAdd){
+    public static String addWord(int divider, int numberToCheck, String wordToAdd) {
         if (isaDivider(divider, numberToCheck)) {
             return wordToAdd;
         } else {
             return "";
         }
+    }
+    public static String reverseSentence(String setenceToReverse) {
+        return "reverseSentence";
     }
     public static void main(String[] args) {
         fizzbuzz();
